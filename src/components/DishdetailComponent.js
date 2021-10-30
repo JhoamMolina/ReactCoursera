@@ -56,8 +56,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 }
 
     const DishDetail = (props) => { 
-        const dish = this.props.dish
-        if(dish == null) {
+        if(props.dish == null) {
             return(<div></div>)
         }
         return (
