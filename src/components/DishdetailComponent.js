@@ -27,8 +27,9 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values){
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+
     }
 
     render() {
@@ -58,7 +59,7 @@ class CommentForm extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Label htmlFor="author" md={12}>First Name</Label>
+                                <Label htmlFor="author" md={12}>Your Name</Label>
                                 <Col md={12}>
                                     <Control.text model=".author" id="author" name="author"
                                         placeholder="Your Name"
@@ -121,7 +122,7 @@ class CommentForm extends Component {
             );
         }
 
-        function RenderComment({comments, addComment, dishId}) {
+        function RenderComment({comments, postComment, dishId}) {
         if(comments == null){
             return(
                 <div></div>)
@@ -146,7 +147,7 @@ class CommentForm extends Component {
             <div className="col-12 col-md-5 m-1">
                 <h4>Comments</h4>
                 {comment}
-                <CommentForm dishId={dishId} addComment={addComment} />
+                <CommentForm dishId={dishId} postComment={postComment} />
 
             </div>
         )
@@ -188,7 +189,7 @@ class CommentForm extends Component {
                 <div className="row">
                     <RenderDish dish={props.dish} />
                     <RenderComment comments={props.comments}
-                                    addComment={props.addComment}
+                                    postComment={props.postComment}
                                     dishId={props.dish.id}
                                     />
                 </div>
