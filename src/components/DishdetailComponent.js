@@ -61,7 +61,7 @@ class CommentForm extends Component {
                                 <Label htmlFor="author" md={12}>First Name</Label>
                                 <Col md={12}>
                                     <Control.text model=".author" id="author" name="author"
-                                        placeholder="First Name"
+                                        placeholder="Your Name"
                                         className="form-control"
                                         validators={{
                                             required, minLength: minLength(3), maxLength: maxLength(15)
