@@ -1,7 +1,8 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import RenderLeader from './RenderLeaderComponent';
+
 
 function About(props) {
     return(
@@ -58,8 +59,11 @@ function About(props) {
                 <div className="col-12">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
-                        <RenderLeader leaders={props.leaders}/>
+                <div className="col-12">                    
+                        <RenderLeader leaders={props.leaders}
+                                       isLoading={props.leadersLoading}
+                                       errMess={props.errMess}
+                                      />
                 </div>
             </div>
         </div>
