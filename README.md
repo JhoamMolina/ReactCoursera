@@ -1,3 +1,3 @@
 # Learning React
 
-React project for coursera
+React project, specialization for React.
